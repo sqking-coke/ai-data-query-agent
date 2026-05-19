@@ -41,4 +41,14 @@ public class LlmResponse {
             return answer != null && !answer.isBlank();
         }
     }
+
+    /**
+     * 判断是否需要执行sql
+     */
+    public boolean isNeedSql() {
+        if (needSql == null){
+            return false;
+        }
+        return true;
+    }
 }
