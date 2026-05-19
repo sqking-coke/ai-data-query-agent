@@ -1,4 +1,4 @@
-# 业务数据智能查询 Agent
+# 业务数据智能查询Agent - 项目设计文档
 
 ## 1. 项目概述
 
@@ -56,6 +56,46 @@
 - **轻量化**：无重型Agent框架依赖，启动快、部署简单
 
 ## 3. 整体架构设计
+
+```aiignore
+ai-data-query-agent/
+├── pom.xml
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── aiagent/
+│       │           ├── AiAgentApplication.java              # SpringBoot 启动类
+│       │           ├── config/
+│       │           │   └── AgentConfig.java                 # 配置属性类
+│       │           ├── controller/
+│       │           │   └── AgentController.java             # 接入层：REST接口
+│       │           ├── dto/
+│       │           │   ├── AgentRequest.java                # 请求DTO
+│       │           │   ├── AgentResponse.java               # 响应DTO
+│       │           │   ├── LlmResponse.java                 # LLM返回结构DTO
+│       │           │   └── Message.java                     # 对话消息
+│       │           ├── entity/
+│       │           │   └── OrderInfo.java                   # 订单实体
+│       │           ├── mapper/
+│       │           │   └── OrderInfoMapper.java             # MyBatis-Plus Mapper
+│       │           ├── service/
+│       │           │   ├── AgentService.java                # Agent服务接口
+│       │           │   ├── impl/
+│       │           │   │   └── AgentServiceImpl.java        # Agent调度核心实现
+│       │           │   ├── llm/
+│       │           │   │   └── LlmClient.java               # 大模型HTTP客户端
+│       │           │   ├── tool/
+│       │           │   │   └── ToolExecutor.java            # 工具执行器
+│       │           │   ├── security/
+│       │           │   │   └── SqlSecurityValidator.java    # SQL安全校验
+│       │           │   └── session/
+│       │           │       └── SessionManager.java          # 会话记忆管理
+│       │           └── util/
+│       │               └── JsonUtil.java                    # JSON工具类
+│       └── resources/
+│           └── application.yml                              # 应用配置
+```
 
 ### 3.1 架构模式
 
