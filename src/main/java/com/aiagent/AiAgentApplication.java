@@ -19,7 +19,7 @@ public class AiAgentApplication {
         SpringApplication.run(AiAgentApplication.class, args);
         System.out.println("========================================");
         System.out.println("  AI数据查询Agent 启动成功！");
-        System.out.println("  接口地址: http://localhost:8080/agent/chat");
+        System.out.println("  接口地址: http://localhost:8088/agent/chat");
         System.out.println("========================================");
     }
 }

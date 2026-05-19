@@ -1,7 +1,8 @@
 package com.aiagent.service.impl;
 
-import com.aiagent.config.AgentConfig;
-import com.aiagent.dto.*;
+import com.aiagent.dto.AgentResponse;
+import com.aiagent.dto.LlmResponse;
+import com.aiagent.dto.Message;
 import com.aiagent.service.AgentService;
 import com.aiagent.service.llm.LlmClient;
 import com.aiagent.service.security.SqlSecurityValidator;
@@ -39,7 +40,6 @@ public class AgentServiceImpl implements AgentService {
     private final ToolExecutor toolExecutor;
     private final SqlSecurityValidator sqlValidator;
     private final SessionManager sessionManager;
-    private final AgentConfig config;
 
     /**
      * 系统提示词

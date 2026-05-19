@@ -7,6 +7,8 @@ import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -28,8 +30,8 @@ public class LlmClient {
     private final OkHttpClient httpClient;
     private final AgentConfig config;
 
-    public LlmClient(AgentConfig config) {
-        this.config = config;
+    public LlmClient(@Qualifier("agentConfig") AgentConfig agentConfig) {
+        this.config = agentConfig;
         this.httpClient = new OkHttpClient.Builder()
                 .connectTimeout(config.getTimeout(), TimeUnit.MILLISECONDS)
                 .readTimeout(config.getTimeout(), TimeUnit.MILLISECONDS)

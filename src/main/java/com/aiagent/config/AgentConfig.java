@@ -2,7 +2,8 @@ package com.aiagent.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 /**
  * LLM配置属性
@@ -10,7 +11,8 @@ import org.springframework.context.annotation.Configuration;
  * 从 application.yml 的 llm 节点读取，支持动态切换模型和API地址。
  */
 @Data
-@Configuration
+@Component
+@Primary
 @ConfigurationProperties(prefix = "llm")
 public class AgentConfig {
 
