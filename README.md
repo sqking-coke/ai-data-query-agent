@@ -157,7 +157,7 @@
 
 ### 7.1 后端技术栈
 
-- 核心框架：SpringBoot 3.5.x
+- 核心框架：SpringBoot 3.4.x
 - 数据库：MySQL 8.0
 - 持久层：MyBatis-Plus
 - HTTP工具：OkHttp / Hutool Http
