@@ -1,0 +1,16 @@
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/AiAgentApplication.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/config/AgentConfig.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/controller/AgentController.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/dto/AgentRequest.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/dto/AgentResponse.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/dto/LlmResponse.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/dto/Message.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/entity/OrderInfo.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/mapper/OrderInfoMapper.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/service/AgentService.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/service/impl/AgentServiceImpl.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/service/llm/LlmClient.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/service/security/SqlSecurityValidator.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/service/session/SessionManager.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/service/tool/ToolExecutor.java
+/Users/wsq/work/Agent/ai-data-query-agent/src/main/java/com/aiagent/util/JsonUtil.java

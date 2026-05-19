@@ -16,7 +16,7 @@
     <groupId>com.aiagent</groupId>
     <artifactId>ai-data-query-agent</artifactId>
     <version>1.0.0</version>
-    <name>AI数据查询Agent</name>
+    <name>ai-data-query-agent</name>
     <description>基于Java原生实现的轻量级AI数据查询Agent</description>
 
     <properties>
