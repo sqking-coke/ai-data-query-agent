@@ -57,44 +57,20 @@
 
 ## 3. 整体架构设计
 
-```aiignore
-ai-data-query-agent/
-├── pom.xml
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/
-│       │       └── aiagent/
-│       │           ├── AiAgentApplication.java              # SpringBoot 启动类
-│       │           ├── config/
-│       │           │   └── AgentConfig.java                 # 配置属性类
-│       │           ├── controller/
-│       │           │   └── AgentController.java             # 接入层：REST接口
-│       │           ├── dto/
-│       │           │   ├── AgentRequest.java                # 请求DTO
-│       │           │   ├── AgentResponse.java               # 响应DTO
-│       │           │   ├── LlmResponse.java                 # LLM返回结构DTO
-│       │           │   └── Message.java                     # 对话消息
-│       │           ├── entity/
-│       │           │   └── OrderInfo.java                   # 订单实体
-│       │           ├── mapper/
-│       │           │   └── OrderInfoMapper.java             # MyBatis-Plus Mapper
-│       │           ├── service/
-│       │           │   ├── AgentService.java                # Agent服务接口
-│       │           │   ├── impl/
-│       │           │   │   └── AgentServiceImpl.java        # Agent调度核心实现
-│       │           │   ├── llm/
-│       │           │   │   └── LlmClient.java               # 大模型HTTP客户端
-│       │           │   ├── tool/
-│       │           │   │   └── ToolExecutor.java            # 工具执行器
-│       │           │   ├── security/
-│       │           │   │   └── SqlSecurityValidator.java    # SQL安全校验
-│       │           │   └── session/
-│       │           │       └── SessionManager.java          # 会话记忆管理
-│       │           └── util/
-│       │               └── JsonUtil.java                    # JSON工具类
-│       └── resources/
-│           └── application.yml                              # 应用配置
+```
+┌──────────────────────────────────────────────┐
+│                 Agent 调度核心                  │
+│                                              │
+│   ┌──────────┐    ┌──────────┐    ┌────────┐ │
+│   │ 思考(Think) │ → │ 行动(Act) │ → │观察(Obs)│ │
+│   │ 大模型判断   │    │ 执行工具   │    │拿结果   │ │
+│   │ 要什么工具   │    │          │    │        │ │
+│   └──────────┘    └──────────┘    └────────┘ │
+│         ↑                              │      │
+│         └──────── 总结(Answer) ←──────┘      │
+│                  将结果+问题再次              │
+│                  交给大模型分析               │
+└──────────────────────────────────────────────┘
 ```
 
 ### 3.1 架构模式
@@ -197,7 +173,7 @@ ai-data-query-agent/
 
 ### 7.1 后端技术栈
 
-- 核心框架：SpringBoot 3.4.x
+- 核心框架：SpringBoot 3.5.x
 - 数据库：MySQL 8.0
 - 持久层：MyBatis-Plus
 - HTTP工具：OkHttp / Hutool Http
